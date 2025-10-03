@@ -36,7 +36,7 @@ You must activate the environment before installing libraries or running the app
 - **On Windows (Command Prompt/PowerShell):**
 
 ```
-.\\venv\\Scripts\\activate
+.\venv\Scripts\activate
 ```
 
 - **On macOS/Linux:**
