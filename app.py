@@ -390,7 +390,12 @@ class PriceListWindow(ctk.CTkToplevel):
         self.refresh_data_and_ui(select_category=cat_name); self.estimate_frame.update_dropdowns()
     def populate_edit_fields(self, item_id, name, price, cat_name):
         self.editing_item_id = item_id; self.item_name_entry.delete(0, 'end'); self.unit_price_entry.delete(0, 'end')
-        self.item_name_entry.insert(0, name); self.unit_price_entry.insert(0, str(price)); self.category_menu.set(cat_name); self.add_button.configure(text="Update Item")
+        self.item_name_entry.insert(0, name); 
+        if price == int(price):
+            self.unit_price_entry.insert(0, str(int(price)))
+        else:
+            self.unit_price_entry.insert(0, str(price))
+        self.category_menu.set(cat_name); self.add_button.configure(text="Update Item")
     def delete_item(self, item_id):
         confirm_delete = True
         if load_setting('show_confirmations', 'True') == 'True':
