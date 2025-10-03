@@ -21,8 +21,11 @@ Create a folder for your project and place the following files inside it:
 
 ### **Step 2: Create a Virtual Environment**
 
-Open a Command Prompt or PowerShell, navigate into your project folder, and run the following command to create a virtual environment named venv:  
-`python \-m venv venv`
+Open a Command Prompt or PowerShell, navigate into your project folder, and run the following command to create a virtual environment named venv:
+
+```
+python \-m venv venv
+```
 
 _This creates a venv folder that will contain all the project's specific libraries, keeping them separate from your computer's main Python installation._
 
@@ -30,23 +33,35 @@ _This creates a venv folder that will contain all the project's specific librari
 
 You must activate the environment before installing libraries or running the app. The command differs based on your operating system.
 
-- **On Windows (Command Prompt/PowerShell):**  
-  `.\\venv\\Scripts\\activate`
+- **On Windows (Command Prompt/PowerShell):**
 
-- **On macOS/Linux:**  
-  `source venv/bin/activate`
+```
+.\\venv\\Scripts\\activate
+```
+
+- **On macOS/Linux:**
+
+```
+source venv/bin/activate
+```
 
 After activation, you will see (venv) at the beginning of your command prompt line.
 
 ### **Step 4: Install Required Libraries**
 
-With your virtual environment active, install all the necessary libraries using the requirements.txt file with this single command:  
-`pip install \-r requirements.txt`
+With your virtual environment active, install all the necessary libraries using the requirements.txt file with this single command:
+
+```
+pip install \-r requirements.txt
+```
 
 ### **Step 5: Run the Application**
 
-You can now run the application directly from your development environment:  
-`python app.py`
+You can now run the application directly from your development environment:
+
+```
+python app.py
+```
 
 The application window should appear, and it will create a CC-Estimator folder in your user's home directory to store the database.
 
@@ -56,13 +71,19 @@ Follow these steps to package the application into a single executable file that
 
 ### **Step 1: Install PyInstaller**
 
-If you followed Part 1, PyInstaller is already installed. If not, make sure your virtual environment is active and run:  
-`pip install pyinstaller`
+If you followed Part 1, PyInstaller is already installed. If not, make sure your virtual environment is active and run:
+
+```
+pip install pyinstaller
+```
 
 ### **Step 2: Run the Build Command**
 
-While inside your project folder with the virtual environment active, run the following command in your terminal. This command tells PyInstaller how to bundle your application.  
-`pyinstaller \--name "CabinetEstimator" \--onefile \--windowed \--icon="door\_icon.ico" \--add-data "door\_icon.ico;." \--hidden-import="fitz.fitz" app.py`
+While inside your project folder with the virtual environment active, run the following command in your terminal. This command tells PyInstaller how to bundle your application.
+
+```
+pyinstaller \--name "CabinetEstimator" \--onefile \--windowed \--icon="door\_icon.ico" \--add-data "door\_icon.ico;." \--hidden-import="fitz.fitz" app.py
+```
 
 **Command Breakdown:**
 
